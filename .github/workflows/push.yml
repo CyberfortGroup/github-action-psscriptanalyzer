@@ -13,4 +13,4 @@ jobs:
         failOnErrors: true
         failOnWarnings: true
         failOnInfos: false
-        repoToken: ${{ secrets.GITHUB_TOKEN }}
+        repoToken: ${{ secrets.CONNECTION_ACCESS }}
