@@ -1,0 +1,16 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  lint:
+    name: Run PSSA
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: lint
+      uses: CyberfortGroup/github-action-psscriptanalyzer@main
+      with:
+        sendComment: true
+        failOnErrors: true
+        failOnWarnings: true
+        failOnInfos: false
+        repoToken: ${{ secrets.GITHUB_TOKEN }}
